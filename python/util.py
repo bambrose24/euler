@@ -27,7 +27,7 @@ def primesUpTo(n):
     return np.r_[2,3,((3*np.nonzero(sieve)[0]+1)|1)]
 
 def isPrime(n):
-  if n == 2 or n == 3: return True
+  if n == 2 or n == 3 or n == 11 or n == 13: return True
   if n < 2 or n%2 == 0: return False
   if n < 9: return True
   if n%3 == 0: return False
@@ -49,3 +49,16 @@ def multiplicativeOrder(b,m):
         count+=1
         r = (r*b) % m
     return count
+
+def firstNPrimes(n):
+    if n < 1:
+        return []
+    if n == 1:
+        return [2]
+    i = 3
+    res = [2]
+    while len(res) < n:
+        if isPrime(i):
+            res.append(i)
+        i+=2
+    return res
