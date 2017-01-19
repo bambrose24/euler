@@ -14,7 +14,7 @@ def test(x,i):
     lst = [set(str(x*y)) for y in range(1,i+1)]
     res = lst[0]
     for y in range(1,len(lst)):
-        res = res.intersection(lst[y])
+        res = res.union(lst[y])
     return lst[0] == res
 
 if __name__ == '__main__':
