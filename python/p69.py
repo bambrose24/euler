@@ -1,13 +1,4 @@
-import fractions
-
-def phi(n):
-    amount = 0
-
-    for k in range(1, n + 1):
-        if fractions.gcd(n, k) == 1:
-            amount += 1
-
-    return amount
+from util import *
 
 def main():
     m = 0
@@ -16,10 +7,9 @@ def main():
     r = range(5,1000001)
     r = range(5,1001)
     for i in r:
-        res = i / phi(i)
-        if res > m:
-            m = res
-            n = i
+        if i % 100 == 0:
+            print(i)
+        x = phi(i)
     print('answer: %d' % n)
 
 if __name__ == '__main__':
