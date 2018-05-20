@@ -2,6 +2,7 @@ import numpy as np
 from itertools import chain
 
 import fractions
+from fractions import gcd
 
 def phi(n):
     amount = 0
